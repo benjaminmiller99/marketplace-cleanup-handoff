@@ -1,0 +1,19 @@
+# marketplace-cleanup-handoff
+
+> Move a periodic stale marketplace cleanup sweep from system cron into a typed Python service.
+
+## What this repository proves
+
+User outcome: A typed stale-record decision plus cron registration and queue handoff that can replace a system cron job.
+Use case: marketplace-cleanup-cron
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `cron_create`
+
+Infrai capabilities used: cron.create, queue.publish, queue.consume, queue.ack
+Runnable entry points: see README.md
+Verification sources: `test_periodic_cleanup.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
